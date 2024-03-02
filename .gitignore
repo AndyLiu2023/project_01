@@ -1,0 +1,5 @@
+.env
+
+views/home.ejs
+
+app.js
