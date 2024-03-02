@@ -1,0 +1,25 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-訂單列表'})%>
+<link rel="stylesheet" href="/styles/order.css">
+<script src="/scripts/order-list-toggle.js" defer></script>
+</head>
+<body>
+    <%- include('../includes/header')%>
+    <main>
+            
+        <h1 class="order-list-title">訂單列表</h1>
+
+        <ul class="order-list-ul">
+            <% for (const order of orders) { %>
+                <li class="order-list-li">
+                    <%- include('includes/order-item', { order: order}) %>
+                </li>
+            <% } %>
+        </ul>
+
+
+        
+
+    </main>
+    <%- include('../includes/footer')%>
+</body>
+</html>

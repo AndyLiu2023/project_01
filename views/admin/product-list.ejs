@@ -1,0 +1,59 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-商品管理列表'})%>
+<link rel="stylesheet" href="/styles/product.admin.css">
+</head>
+<body>
+    <%- include('../includes/header')%>
+    <main>
+        <% if (!locals.isAdmin) { %> 
+            <%- include('../includes/no_auth_item') %>
+            
+            <% } %>
+
+        <% if (locals.isAdmin) { %>
+            <input
+            type="hidden"
+            name="CSRFToken"
+            value="<%= locals.csrfToken %>"/>
+            <h2>管理員後台-商品管理</h2>
+                <h1>商品列表</h1>
+
+            <div class="main-area">
+            <ul class="nav-area">
+                <li class="nav-li"><a href="/admin/newproduct">上架商品</a></li>
+                <li>
+                    <a href="/admin/plist">已上架商品 </a>
+                    <ul>
+
+                        <% for (const category of categories) { %>
+                            <li class="nav-li">
+                               <a href="/admin/plist/<%= category.custom_number %>"> 
+                                <%= category.category_name %>
+                                </a>
+                            </li>
+                            <% } %>
+                    </ul>
+                </li>
+                
+            </ul>
+
+            <ul class="product-list">
+                
+                <% if(products.length === 0) { %>
+                    <p>尚未新增此分類商品</p>
+                    <% } %>
+
+                <% for (const product of products) { %>
+                    
+                <li class="product-list-li">
+                    <%- include('includes/product-item', {product: product}) %>
+                </li>
+               
+                <% } %>
+            </ul>
+            </div>
+            <% } %>
+          
+    </main>
+    <%- include('../includes/footer')%>
+</body>
+</html>

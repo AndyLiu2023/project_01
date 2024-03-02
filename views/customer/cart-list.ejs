@@ -1,0 +1,38 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-購物車'})%>
+<link rel="stylesheet" href="/styles/cart.css">
+<script src="/scripts/cart-item-management.js" defer></script>
+</head>
+<body>
+    <%- include('../includes/header')%>
+    <main>
+            
+        <h1>購物車</h1>
+        <P>您所選購的商品</P>
+
+        <ul class="cart-list-ul">
+            <% for (const cartItem of locals.cart.items) { %>
+                <li class="cart-list-li">
+                    <%- include('includes/cart-item', { item: cartItem }) %>
+                </li>
+            <% } %>
+        </ul>
+        <section class="total-area">
+            <div>
+                <p>商品總數：<span id="total-quantity"><%= locals.cart.totalQuantity %></span> 件</p>  
+                <p>商品總金額： NT$ <span id="total-price">  <%= locals.cart.totalPrice %></span> </p>
+            </div>
+            <% if (locals.cart.items[0]) { %>
+            <div>
+                <form action="/orders/confirm" method="GET">
+                <button id="checkout-btn">結帳</button>
+                </form>
+            </div>
+            <% } %>
+        </section>
+
+        
+
+    </main>
+    <%- include('../includes/footer')%>
+</body>
+</html>

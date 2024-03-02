@@ -1,0 +1,35 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-訂單管理列表'})%>
+<!-- <link rel="stylesheet" href="/styles/order.css"> -->
+<link rel="stylesheet" href="/styles/order.admin.css">
+<script src="/scripts/order-management.js" defer></script>
+</head>
+<body>
+    <%- include('../includes/header')%>
+    <main>
+        <h2>管理員後台-訂單管理</h2>
+        <h1 class="order-list-title-admin">訂單列表</h1>
+
+        <div class="filter-area"> 
+            <ul>
+                <li><a href="/admin/adminorder">所有訂單</a></li>
+                <li><a href="/admin/filter/處理中">處理中</a></li>
+                <li><a href="/admin/filter/已出貨">已出貨</a></li>
+                <li><a href="/admin/filter/已取消">已取消</a></li>
+            </ul>
+        </div>
+
+        <ul class="order-list-ul">
+            <% for (const order of orders) { %>
+                <li class="order-list-li">
+                    <%- include('includes/order-item', { order: order}) %>
+                </li>
+            <% } %>
+        </ul>
+
+
+        
+
+    </main>
+    <%- include('../includes/footer')%>
+</body>
+</html>

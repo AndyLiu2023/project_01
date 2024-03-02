@@ -1,0 +1,77 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-確認收件人'})%>
+<link rel="stylesheet" href="/styles/order.css">
+
+<script src="/scripts/cart-item-management.js" defer></script>
+</head>
+<body>
+    <%- include('../includes/header')%>
+    <main>
+            
+    <h1>開始結帳流程！</h1>
+    <h3>您選購的商品：</h3>
+    <section class="order-process-section">
+        <ul class="order-process-ul">
+            <% for (const cartItem of locals.cart.items) { %>
+            <li class="order-process-li">
+                <%- include('includes/order-cartItem', { item: cartItem }) %>
+            </li>
+            <% }  %>
+        </ul>
+        <div class="total-price-div">
+            <p>總金額： NT$ <span><%= locals.cart.totalPrice %></span></p>
+        </div>
+    </section>
+    <section class="receiver-section">
+        <h3 class="receiver-section-h3" >填寫收件人資料</h3>
+        <% if (inputData.errorMessage) { %>
+            <section class="alerts">
+              <h2>輸入錯誤</h2>
+              <p><%= inputData.errorMessage %></p>
+            </section>
+          <% } %>
+        <form action="/orders" method="POST" class="receiver-form">
+            <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>
+        <ul>
+            <li>
+                <p>
+                    <label for="receiver">收件人姓名</label>
+                    <input type="text"  name ="receiver" id ="receiver" value="<%= inputData.name %>" required>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <label for="email">電子信箱</label>
+                    <input type="text" name="email" id="email" value="<%= inputData.email %>"  required>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <label for="phone">連絡電話</label>
+                    <input type="text" name="phone" id="phone" value="<%= inputData.phone %>" required>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <label for="address">地址</label>
+                    <input type="text" name="address" id="address"  value="<%= inputData.address %>"required>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <label for="">郵遞區號</label>
+                    <input type="text" name="postal" id="postal" minlength="3" maxlength="5" value="<%= inputData.postal %>" required>
+                </p>
+            </li>
+
+        </ul>
+            <button>送出</button>
+        </form>
+    </section>
+
+
+        
+
+    </main>
+    <%- include('../includes/footer')%>
+</body>
+</html>

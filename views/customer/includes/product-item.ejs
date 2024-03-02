@@ -1,0 +1,13 @@
+<article class="customer-product-item">
+    <div class="product-item-img">
+        <img src="/product-data/product-images/<%= product.image %>" alt="">
+        <a  href="/product/<%= product.uid %>" class="div-items  view-item-btn">查看商品</a>
+        
+    </div>
+    <div>
+        <a href="/item/<%= product.uid %>"  class="div-items  add-cart-btn" data-productUid="<%= product.uid%>">加入購物車</a>
+        <p class="div-items"><%= product.name %></p>
+        <p class="div-items">NT$ <%= product.price %></p>
+ 
+    </div>
+</article>

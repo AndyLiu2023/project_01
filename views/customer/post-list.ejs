@@ -1,0 +1,27 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-最新消息'})%>
+<link rel="stylesheet" href="/styles/posts.customer.css">
+</head>
+<body>
+   
+    <%- include('../includes/header')%>
+    <main>
+
+            <h1>最新消息</h1>
+            
+            <ul class="posts-list">
+                
+                <% for (const post of posts) { %>
+                    
+                <li>
+                    <%- include('includes/post-item', {posts: post}) %>
+                </li>
+               
+                <% } %>
+            </ul>
+
+
+          
+    </main>
+    <%- include('../includes/footer')%>
+</body>
+</html>

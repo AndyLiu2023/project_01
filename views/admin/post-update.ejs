@@ -1,0 +1,29 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-消息更新'})%>
+<link rel="stylesheet" href="/styles/posts.css">
+<script src="/scripts/posts.js" defer></script>
+</head>
+<body>
+    <%- include('../includes/header')%>
+    <main>
+        <h2>管理員後台-消息更新</h2>
+        <article class="updatePost-Area">
+            <form action="/admin/posts/<%= posts.id %>/edit" method="POST">
+                <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>
+                <h4>更新消息</h4>
+                <p>
+                    <label for="title">消息標題</label>
+                    <input type="text" name="title" id="title" value="<%= posts.title %>">
+                </p>
+                <p>
+                    <label for="content">消息內容</label>
+                    <textarea type="text" name="content" id="content" rows="15"><%= posts.content %></textarea>
+                </p>
+                <button class="a-list">完成修改</button>
+                <a class="post-a a-update a-list" href="/admin/posts" id="closeNewPost-Btn">返回列表</a>
+            </form>
+        </article>
+
+    </main>
+    <%- include('../includes/footer')%>
+</body>
+</html>

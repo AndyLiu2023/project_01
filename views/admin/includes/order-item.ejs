@@ -1,0 +1,72 @@
+<article class="order-article">
+    <section class="order-number-section">
+        <p>訂單編號</p>
+    </section>
+    <section class="order-number-content-section">
+        <p><%= order.id %></p>
+    </section>
+    <section class="order-date-section">
+        <p>訂單日期</p>
+    </section>
+    <section class="order-date-content-section">
+        <p><%= order.date %></p>
+    </section>
+    <section class="order-status-section">
+        <p>訂單狀態</p>
+    </section>    
+    <section class="order-status-content-section">
+        <p>目前狀態：<span><%= order.status %></span></p>
+        <form  class="order-status-form"   action="">
+            <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>
+            <input type="hidden" name="orderid" value="<%= order.id %>">
+            <select name="status">
+                <option value="處理中" <% if (order.status === '處理中') { %>selected<% } %>>處理中</option>
+                <option value="已出貨" <% if (order.status === '已出貨') { %>selected<% } %>>已出貨</option>
+                <option value="已取消" <% if (order.status === '已取消') { %>selected<% } %>>已取消</option>
+              </select>
+            
+            <button>更新狀態</button>
+        </form>
+    </section>
+    <section class="order-receiver-section">
+        <p>收件人資訊</p>
+    </section>
+    <section class="order-receiver-content-section">
+        <p>姓名：<span><%= order.receiverData.name %></span></p>
+        <p>電子郵件：<span><%= order.receiverData.email %></span></p>
+        <p>電話： <span><%= order.receiverData.phone %></span></p>
+        <p>郵遞區號：<span><%= order.receiverData.postal %></span></p>
+        <p>地址：<span><%= order.receiverData.address %></span></p>
+
+    </section>
+    <section class="paystatus-section">
+        <p>付款狀態</p>
+    </section>
+    <section class="paystatus-content-section">
+        <p><%= order.paystatus %></p>
+    </section>
+    <section class="order-items-section">
+        <p>訂單明細</p>
+    </section>
+    <section class="order-items-content-section">
+        <% for (const orderinfo of order.productData.items) { %>
+            <ul class="order-cart-item-ul">
+                    <li class="order-product-name">
+                        <p><%= orderinfo.product.name %></p>
+                    </li>
+                    <li>
+                        <p class="order-cart-item-p">尺吋/規格：<span class="order-text"><%= orderinfo.size %></span></p>
+                        <p class="order-cart-item-p">顏色：<span class="order-text"><%= orderinfo.color %></span></p>
+                    </li>
+                    <li>
+                        <p class="order-cart-item-p">商品單價：<span class="order-text">NT$ <%= orderinfo.product.price %></span></p>
+                    </li>
+                    <li>
+                        <p class="order-cart-item-p">購買數量： <span class="order-text"><%= orderinfo.quantity %></span></p>
+                    </li>
+                </ul>
+                <% } %>
+    </section>
+
+
+</article>

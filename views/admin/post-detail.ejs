@@ -1,0 +1,23 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-消息內容'})%>
+<link rel="stylesheet" href="/styles/posts.css">
+<script src="/scripts/posts.js" defer></script>
+</head>
+<body>
+   
+    <%- include('../includes/header')%>
+    <main>
+        
+            <h2>管理員後台-消息內容</h2>
+        <article class="post-detail-article">
+            <h3><%= posts.date %></h3>
+            <h3><%= posts.title %></h3>
+            <p class="post-content"><%= posts.content %></p>
+            <section class="a-detail">
+                <a class="post-a a-list" href="/admin/posts/<%= posts.id %>/edit">修改</a>
+                <a class="post-a a-list" href="/admin/posts">返回列表</a>
+            </section>
+        </article>
+    </main>
+    <%- include('../includes/footer')%>
+</body>
+</html>

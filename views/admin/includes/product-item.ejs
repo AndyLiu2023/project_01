@@ -1,0 +1,67 @@
+
+<article class="product-area">
+    <section class="section-title"><p>商品圖片</p></section>
+    <section class="section-title"><p>商品名稱</p></section>
+    <section class="section-title"><p>尺寸/規格</p></section>
+    <section class="section-title"><p>顏色樣式</p></section>
+    <section class="section-title"><p>價格</p></section>
+    <section class="section-title"><p>商品分類</p></section>
+    <section class="section-title"></section>
+    <section class="section-content"><img src="/product-data/product-images/<%= product.image %>" alt="商品圖片"></section>
+    <section class="section-content"><p><%= product.name %></p></section>
+    <section class="section-content">
+        <ul>
+            <% if(product.size_1 !== 'null') { %>
+                <li class="product-options"><%= product.size_1 %></li>
+            <% } %>
+            <% if(product.size_2 !== 'null') { %>
+                <li class="product-options"><%= product.size_2 %></li>
+            <% } %>
+            <% if(product.size_3 !== 'null') { %>
+                <li class="product-options"><%= product.size_3 %></li>
+            <% } %>
+            <% if(product.size_4 !== 'null') { %>
+                <li class="product-options"><%= product.size_4 %></li>
+            <% } %>
+            <% if(product.size_5 !== 'null') { %>
+                <li class="product-options"><%= product.size_5 %></li>
+            <% } %>
+        </ul>
+    </section>
+    <section class="section-content">
+        <ul>
+            <% if(product.color_1 !== 'null') { %>
+                <li class="product-options"><%= product.color_1 %></li>
+            <% } %>
+            <% if(product.color_2 !== 'null') { %>
+                <li class="product-options"><%= product.color_2 %></li>
+            <% } %>
+            <% if(product.color_3 !== 'null') { %>
+                <li class="product-options"><%= product.color_3 %></li>
+            <% } %>
+            <% if(product.color_4 !== 'null') { %>
+                <li class="product-options"><%= product.color_4 %></li>
+            <% } %>
+            <% if(product.color_5 !== 'null') { %>
+                <li class="product-options"><%= product.color_5 %></li>
+            <% } %>
+        </ul>
+    </section>
+    <section class="section-content"><p><%= product.price %></p></section>
+    <section class="section-content"><p><%= product.category_name %></p></section>
+    <section class="section-content">
+        <ul class="edit-btn">
+            <li><a class="a-plist" href="/product/<%= product.uid %>">瀏覽</a></li>
+            <li><a class="a-plist" href="/admin/product/edit/<%= product.uid %>">修改</a></li>
+           
+            <li>
+                <form action="/admin/product/delete/<%= product.uid %>" method="POST">
+                    <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>
+                    <button class="a-plist">刪除</button>
+                </form>
+            </li>
+            
+        </ul>
+    </section>
+
+</article>

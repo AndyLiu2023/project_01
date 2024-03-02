@@ -1,0 +1,20 @@
+<article>
+    <div class="dateAndBtn">
+        <h4><%= posts.date %></h4>
+        <div class="list-option">
+            <a class="post-a a-list" href="/admin/posts/<%= posts.id%>/detail">內容</a>
+            
+            <a class="post-a a-list" href="/admin/posts/<%= posts.id%>/edit">修改</a>
+            <form action="/admin/posts/<%= posts.id %>/delete" method="POST">
+                <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>
+                <button class="a-list btn-list">刪除</button>
+            </form>
+            
+        </div>
+
+    </div>
+
+    <h3><%= posts.title %></h3>
+
+
+</article>

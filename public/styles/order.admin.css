@@ -1,0 +1,213 @@
+main{
+    background-color: var(--color-002);
+    padding: 1rem;
+    color: var(--color-001);
+    text-align: center;
+    min-height: 40rem;
+}
+
+
+h1,h2{
+    text-align: center;
+    color: var(--color-004);
+}
+
+.order-list-title-admin{
+    margin-left: 0;
+}
+
+.order-article section{
+    border: 1px solid var(--color-001);
+    
+}
+
+
+
+.order-number-section{
+    grid-area: number;
+    text-align: center;
+    background-color: var(--color-003);
+    padding: 0.5rem;
+}
+
+.order-number-content-section{
+    grid-area: numberContent;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.order-date-section{
+    grid-area: date;
+    text-align: center;
+    background-color: var(--color-003);
+    padding: 0.5rem;
+}
+
+.order-date-content-section{
+    grid-area: dateContent;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.order-status-section{
+    grid-area: status;
+    text-align: center;
+    background-color: var(--color-003);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-status-content-section{
+    grid-area: statusContent;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.paystatus-section{
+    grid-area: paystatus;
+    text-align: center;
+    background-color: var(--color-003);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paystatus-content-section{
+    grid-area: paystatusContent;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.order-receiver-section{
+    grid-area: receiver;
+    text-align: center;
+    background-color: var(--color-003);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.order-receiver-content-section{
+    grid-area: receiverContent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.order-receiver-content-section p{
+    margin-left: 0.5rem;
+    padding: 0.25rem;
+}
+
+.order-items-section{
+    grid-area: items;
+    background-color: var(--color-003);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.order-items-content-section{
+    grid-area: itemsContent;
+}
+
+.order-article{
+    display: grid;
+    grid-template-areas: 
+    'number numberContent date dateContent'
+    'status statusContent receiver receiverContent'
+    'paystatus paystatusContent paystatusContent paystatusContent'
+    'items items items items'
+    'itemsContent itemsContent itemsContent itemsContent'
+    ;
+
+    background-color: var(--color-004);
+    margin: 1rem auto;
+    border-radius: 5px;
+    box-shadow: var(--boxshadow);
+    width: 90%;
+
+}
+
+.order-product-name p{
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+
+.order-cart-item-ul{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-001);
+
+}
+
+.order-product-name{
+    text-align: center;
+}
+
+
+.order-cart-item-ul li{
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.order-cart-item-p{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.order-text{
+    color: var(--color-003);
+    font-size: 1.2rem;
+   
+}
+
+
+.order-receiver-section{
+    background-color: var(--color-003);
+    border: 1px solid var(--color-001);
+    text-align: center;
+    padding: 0.25rem 0;
+}
+
+.filter-area{
+    margin-left: 5rem;
+}
+
+.filter-area ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-area ul li{
+    margin: 0 0.25rem;
+    padding: 0.25rem;
+    background-color: var(--color-003);
+    border-radius: 20px;
+}
+
+.filter-area ul li:hover{
+    background-color: var(--color-001);
+    
+}
+
+.filter-area ul li a{
+    color: var(--color-001);
+}
+
+.filter-area ul li a:hover{
+    color: var(--color-004);
+}

@@ -1,0 +1,484 @@
+main{
+    background-color: var(--color-002);
+    padding: 1rem;
+    color: var(--color-001);
+    text-align: center;
+    min-height: 40rem;
+}
+
+h1, h3{
+    color: var(--color-004);
+  
+}
+
+
+
+.order-process-section{
+    background-color: var(--color-004);
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: var(--boxshadow);
+}
+
+
+
+.order-product-name p{
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+
+.order-cart-item-ul{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-001);
+
+}
+
+.order-product-name{
+    text-align: center;
+}
+
+.order-cart-item-ul li{
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.order-process-li{
+    border-top: 1px solid var(--color-001);
+}
+
+.order-cart-item-p{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.order-text{
+    color: var(--color-003);
+    font-size: 1.2rem;
+   
+}
+
+.total-price-div{
+    text-align: end;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.total-price-div p{
+    border-top: 1px solid var(--color-001);
+    width: 90%;
+    padding: 1rem 0;
+}
+
+.total-price-div p span{
+    font-size: 1.5rem;
+    color: var(--color-003);
+}
+
+.receiver-section-h3{
+    color: var(--color-001);
+    padding: 1rem;
+    margin-left: 0rem;
+    font-size: 1.5rem;
+}
+
+.receiver-section{
+    background-color: var(--color-004);
+    margin: 1rem auto;
+    width: 80%;
+    text-align: center;
+}
+
+
+
+
+.receiver-form label, .receiver-form input{
+    display: block;
+    padding: 0.25rem;
+    margin: 0 auto;
+    width: 60%;
+
+}
+
+.receiver-form button{
+
+    margin: 1rem auto;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    background-color: var(--color-003);
+    font-size: 1.25rem;
+    box-shadow: var(--boxshadow);
+    
+}
+
+.receiver-form button:hover{
+
+    background-color: var(--color-001);
+    color: var(--color-004);
+}
+
+
+/* 訂單列表 */
+
+
+
+.order-item-article{
+    display: grid;
+    /* grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 2fr 1fr; */
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    text-align: center;
+    background: var(--color-004);
+    margin: 1rem auto 0 auto;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: var(--boxshadow);
+    color: var(--color-001);
+}
+section:nth-child(1){
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+section:nth-child(2){
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+section:nth-child(3){
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+section:nth-child(4){
+    grid-row-start: 7;
+    grid-row-end: 8;
+}
+
+section:nth-child(5){
+    grid-row-start: 9;
+    grid-row-end: 10;
+}
+
+section:nth-child(7){
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+section:nth-child(8){
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+section:nth-child(9){
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+
+section:nth-child(10){
+    grid-row-start: 8;
+    grid-row-end: 9;
+}
+
+section:nth-child(11){
+    grid-row-start: 10;
+    grid-row-end: 11;
+}
+
+.order-item-article section{
+    border-right: 1px solid var(--color-001);
+    border-bottom: 1px solid var(--color-001);
+}
+
+
+
+.section-detail{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 11;
+    grid-row-end: 12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-detail button{
+    margin: 1rem auto;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    background-color: var(--color-003);
+    font-size: 1.25rem;
+    box-shadow: var(--boxshadow);
+}
+
+.section-detail button:hover{
+    background-color: var(--color-001);
+    color: var(--color-004);
+}
+
+.section-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--color-003);
+    color: var(--color-001);
+}
+
+.section-title-1{
+    border-radius: 5px 0 0 0;
+}
+
+.section-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.order-item-aside{
+    background-color: var(--color-004);
+    box-shadow: var(--boxshadow);
+    margin: 0 auto;
+    width: 100%;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    overflow: hidden;
+}
+
+.order-receiver-section{
+    background-color: var(--color-003);
+    border: 1px solid var(--color-001);
+    text-align: center;
+    padding: 0.25rem 0;
+}
+
+.order-receiver-content-section-users{
+    margin-left: 1rem;
+    padding: 0.25rem 0;
+}
+
+
+/* 確認收件人 */
+
+
+.confirming-receiver-ul li{
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+
+.confirming-receiver-p{
+    color: var(--color-003);
+}
+
+.confirming-reciever-div{
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.confirming-reciever-a{
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: var(--color-001);
+    background-color: var(--color-003);
+    font-size: 1.25rem;
+    box-shadow: var(--boxshadow);
+}
+
+.confirming-reciever-a:hover{
+    background-color: var(--color-001);
+    color: var(--color-004);
+}
+
+
+@media  (min-width: 60rem){
+
+    main{
+        text-align: left;
+    }
+
+
+    .order-list-title{
+        margin-left: 4rem;
+    }
+
+    .order-process-section{
+        width: 80%;
+    }
+    
+    
+    
+    
+    .order-cart-item-ul{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: justify;
+    }
+    
+    
+    .order-cart-item-ul li{
+        padding: 1rem;
+    }
+
+/* 訂單列表 */
+    
+.order-item-article{
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 2fr;
+    width: 90%;
+    border-radius: 5px;
+}
+
+section:nth-child(1){
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+section:nth-child(2){
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+
+section:nth-child(3){
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+section:nth-child(4){
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+section:nth-child(5){
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+
+section:nth-child(7){
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+}
+
+section:nth-child(8){
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+section:nth-child(9){
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+section:nth-child(10){
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+section:nth-child(11){
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+
+
+.order-item-article section{
+    border-right: 1px solid var(--color-001);
+    border-bottom: 1px solid var(--color-001);
+}
+
+.section-detail{
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-detail button{
+    margin: 1rem auto;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    background-color: var(--color-003);
+    font-size: 1.25rem;
+    box-shadow: var(--boxshadow);
+}
+
+.section-detail button:hover{
+    background-color: var(--color-001);
+    color: var(--color-004);
+}
+
+.section-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--color-003);
+    color: var(--color-001);
+}
+
+.section-title-1{
+    border-radius: 5px 0 0 0;
+}
+
+.section-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.order-item-aside{
+    background-color: var(--color-004);
+    box-shadow: var(--boxshadow);
+    margin: 0 auto;
+    width: 90%;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    overflow: hidden;
+}
+    
+
+.confirming-reciever-a{
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    color: var(--color-001);
+    background-color: var(--color-003);
+    font-size: 1.25rem;
+    box-shadow: var(--boxshadow);
+}
+
+
+}

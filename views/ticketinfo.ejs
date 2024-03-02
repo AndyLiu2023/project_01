@@ -1,0 +1,89 @@
+<%- include('includes/head', { pageTitle: '購票資訊' }) %>
+<link rel="stylesheet" href="/styles/ticket.css">
+
+<script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+      key: "AIzaSyCLIESBZ3vFtLYOtc8AcV99bLT4LQXpvAM",
+      // Add other bootstrap parameters as needed, using camel case.
+      // Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
+    });
+  </script>
+  <script src="/scripts/map.js" defer></script>
+</head>
+<body>
+  <%- include('includes/header') %>
+  <main class="">
+   <h1>購票資訊</h1>
+   <section class="ticket-info-section">
+    <ul class="ticket-info-ul">
+        <li>
+            <h2>一日票</h2>
+            <div>
+                <p>
+                    僅能在當天使用
+                    <br>
+                    <br>
+                    首日烤肉自助餐，需額外付費
+                    <br>
+                    樂團表演、工作坊、大地遊戲為自由參與，
+                    <br>
+                    不需收費
+
+                </p>
+            </div>
+            <p class="price">NT$ 650 </p>
+            <a href="https://tixcraft.com" class="purchase-btn">購買此票種</a>
+        </li>
+        <li>
+            <h2>兩天一夜 <br>  一般票</h2>
+            <div>
+               <p>此票種包含帳篷棚位、烤肉自助餐費用
+                <br>
+                <br>
+                帳棚相關裝備需自行準備
+                <br>
+                若要承租帳篷，請於報到時跟工作人員辦理
+                </p> 
+            </div>
+            <p class="price">NT$ 1600 </p>
+            <a href="https://tixcraft.com" class="purchase-btn">購買此票種</a>
+        </li>
+        <li>
+            <h2>兩天一夜 <br> 盡興票</h2>
+            <div>
+                <p>
+                此票種包含帳篷棚位、烤肉自助餐費用
+                <br>
+                <br>
+                表演活動、開幕式、閉幕式皆有預留席
+                <br>
+                <br>
+                附贈當年度周邊商品一組
+                <br>
+                <br>
+                帳棚相關裝備需自行準備
+                <br>
+                若要承租帳篷，請於報到時跟工作人員辦理
+                </p>
+            </div>
+            <p class="price">NT$ 2500 </p>
+            <a href="https://tixcraft.com" class="purchase-btn">購買此票種</a>
+        </li>
+    </ul>
+
+   </section>
+   <section class="ticket-note-section">
+    <h2>注意事項</h2>
+        <ul>
+            <li>所有票券皆為1人/票，未滿 12 歲（含）兒童，須由一名以上已購票成人陪同如場。</li>
+            <li>票券僅代表入場參與人數，不代表帳篷棚位數量，實際帳棚棚位數量、承租需求，請於報到當天與工作人員登記。</li>
+            <li>購票交易方式為線上信用卡付款，付款完成後，經工作人員核對，將會寄送確認電子郵件。請於活動當天報到時，出示電子郵件。</li>
+            <li>關於退補票事宜可以參考常見問題，或是於活動開始前寫信至火狼祭官方信箱。</li>
+            <li>其他活動相關問題，請參考常見問題</li>
+        </ul>
+   </section>
+
+  
+
+  </main>
+<%- include('includes/footer') %>

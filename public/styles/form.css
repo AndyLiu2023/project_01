@@ -1,0 +1,95 @@
+h2{
+    padding: 0.5rem;
+}
+
+main{
+    background-color: var(--color-002);
+    height: 70rem;
+    padding: 1rem;
+}
+
+form {
+    position:relative;
+    border: 1px solid var(--color-004);
+    border-radius: 5px;
+    box-shadow: var(--boxshadow);
+    color: var(--color-004);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+
+}
+
+input,label{
+    display: block;
+    padding: 0.25rem;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.submit-Btn{
+    margin: 1rem auto;
+    width: 40%;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    background-color: var(--color-003);
+    font-size: 1.25rem;
+    box-shadow: var(--boxshadow);
+}
+
+.submit-Btn:hover{
+    background-color: var(--color-001);
+    color: var(--color-004);
+
+}
+
+.nomember{
+    width: 30%;
+    margin: 0 auto;
+}
+
+.nomember:hover{
+    color:var(--color-003);
+}
+
+
+.alerts{
+    border: 1px solid var(--color-004);
+    background-color:var(--color-003);
+    border-radius: 5px;
+    box-shadow: var(--boxshadow);
+    color:var(--color-001);
+    padding: 1rem;
+
+}
+
+@media  (min-width: 60rem){
+
+
+
+    form {
+        width: 50%;
+
+    }
+    
+    input,label{
+    
+        width: 70%;
+    }
+    
+    .submit-Btn{
+       
+        width: 20%;
+        
+    }
+    
+    .alerts{
+        width: 60%;
+        margin:0 auto;
+    }
+
+
+}

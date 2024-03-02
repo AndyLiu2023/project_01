@@ -1,0 +1,135 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-建立商品'})%>
+<link rel="stylesheet" href="/styles/form.product.css">
+<script src="/scripts/product.js" defer></script>
+<script src="/scripts/image-preview.js" defer></script>
+<script src="/util/generate-sample.js" defer></script>
+</head>
+<body>
+<main>
+    <%- include('../includes/header')%>
+    <% if (inputData.errorMessage) { %>
+        <section class="alerts">
+          <h2>輸入錯誤</h2>
+          <p><%= inputData.errorMessage %></p>
+        </section>
+      <% } %>
+
+<form  class="create-Product-form"  action="/admin/createproduct" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>
+                    
+    <div class="form-area-withoutbtn">
+        <div class="productData-area">
+            <p>
+                <label for="name">商品名稱</label>
+                <input type="text" id="name" name="name" value="<%= inputData.productName %>" required >
+            </p>
+            <p>
+                <label for="price">價格</label>
+                <input type="text" id="price" name="price" value="<%= inputData.price %>" required >
+            </p>
+            <p>
+                <label for="category">分類</label>
+                <select name="category" id="category" required>
+                   
+                    <% if(inputData.category) { %>
+                        <option value="<%= inputData.category %>" selected><%= inputData.category %></option>
+                    <% } else { %>
+                            <option value="">選擇商品分類</option>
+                    <% } %>
+
+                    <% for (const category of categories) { %>
+                                <option value="<%= category.category_name %>"><%= category.category_name %></option>
+                     <% } %>
+
+
+                </select>
+            </p>
+            <p>
+                <ul id="sizesUl">
+                    <li>
+                        <label for="sizes_1">尺吋規格 1</label><a id="add-Size-option-a">新增選填</a>
+                        <input type="text" id="sizes_1" name="sizes" value="<% if (!Array.isArray(inputData.sizes)) { %><%= inputData.sizes %><% } else { %><%= inputData.sizes[0] %><% } %>" required>
+                    </li>
+                    <% if (inputData.sizes.length >= 2 && Array.isArray(inputData.sizes) ) { %>
+                        <li>
+                            <label for="sizes_2">尺吋規格 2</label>
+                            <input type="text" id="sizes_2" name="sizes" value="<%=inputData.sizes[1] %>">
+                        </li>
+                    <% } %>
+                    <% if (inputData.sizes.length >= 3 && Array.isArray(inputData.sizes)) { %>
+                        <li>
+                            <label for="sizes_3">尺吋規格 3</label>
+                            <input type="text" id="sizes_3" name="sizes" value="<%= inputData.sizes[2] %>">
+                        </li>
+                        <% } %>
+                    <% if (inputData.sizes.length >= 4 && Array.isArray(inputData.sizes)) { %>
+                        <li>
+                            <label for="sizes_4">尺吋規格 4</label>
+                            <input type="text" id="sizes_4" name="sizes" value="<%= inputData.sizes[3] %>">
+                        </li>
+                    <% } %>
+
+                    <% if (inputData.sizes.length >= 5 && Array.isArray(inputData.sizes)) { %>
+                        <li>
+                            <label for="sizes_5">尺吋規格 5</label>
+                            <input type="text" id="sizes_5" name="sizes" value="<%= inputData.sizes[4] %>">
+                        </li>
+                    <% } %>
+
+
+                </ul>
+                
+            </p>
+            <p>
+                <ul id="colorUl">
+                    <li>
+                        <label for="colors_1">顏色 1</label><a id="add-Color-option-a">新增選填</a>
+                        <input type="text" id="colors_1" name="colors" value="<% if (!Array.isArray(inputData.colors)) { %><%= inputData.colors %><% } else { %><%= inputData.colors[0] %><% } %>"  required>
+                    </li>
+                    <% if (inputData.colors.length >= 2 && Array.isArray(inputData.colors)) { %>
+                        <li>
+                            <label for="colors_2">顏色 2</label>
+                            <input type="text" id="colors_2" name="colors" value="<%=inputData.colors[1] %>">
+                        </li>
+                    <% } %>
+                    <% if (inputData.colors.length >= 3 && Array.isArray(inputData.colors) ) { %>
+                        <li>
+                            <label for="colors_3">顏色 3</label>
+                            <input type="text" id="colors_3" name="colors" value="<%= inputData.colors[2] %>">
+                        </li>
+                        <% } %>
+                    <% if (inputData.colors.length >= 4 && Array.isArray(inputData.colors)) { %>
+                        <li>
+                            <label for="colors_4">顏色 4</label>
+                            <input type="text" id="colors_4" name="colors" value="<%= inputData.colors[3] %>">
+                        </li>
+                    <% } %>
+
+                    <% if (inputData.colors.length >= 5 && Array.isArray(inputData.colors)) { %>
+                        <li>
+                            <label for="colors_5">顏色 5</label>
+                            <input type="text" id="colors_5" name="colors" value="<%= inputData.colors[4] %>">
+                        </li>
+                    <% } %>
+
+                </ul>
+                
+            </p>
+            <label for="description">商品描述</label>
+            <textarea name="description" id="description" cols="60" rows="10" required><%= inputData.description %></textarea>
+        </div>
+        <div class="imageUpload-area">
+            <img src="" alt="selected image!">
+            <label for="image">上傳商品圖片</label>
+            <input type="file" id="image" name="image" accept="image/png,image/jpg" required>
+            
+        </div>
+    </div>
+    <div class="btn-section">
+    <button >建立商品</button> <a href="/admin/plist">取消建立</a> 
+    </div>
+</form>
+</main>
+<%- include('../includes/footer')%>
+</body>
+</html>

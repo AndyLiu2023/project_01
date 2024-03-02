@@ -1,0 +1,52 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-確認收件人'})%>
+<link rel="stylesheet" href="/styles/order.css">
+
+<script src="/scripts/cart-item-management.js" defer></script>
+</head>
+<body>
+    <%- include('../includes/header')%>
+    <main>
+            
+    <h1>開始結帳流程！</h1>
+    <h3>您選購的商品：</h3>
+    <section class="order-process-section">
+        <ul class="order-process-ul">
+            <% for (const cartItem of locals.cart.items) { %>
+            <li class="order-process-li">
+                <%- include('includes/order-cartItem', { item: cartItem }) %>
+            </li>
+            <% }  %>
+        </ul>
+        <div class="total-price-div">
+            <p>總金額： NT$ <span><%= locals.cart.totalPrice %></span></p>
+        </div>
+    </section>
+    <section class="receiver-section">
+        <h3 class="receiver-section-h3" >收件人資料</h3>
+        <ul class="confirming-receiver-ul">
+            <li>
+                <h4>收件人姓名</h4><p class="confirming-receiver-p"><%= receiverdata.name%></p>
+            </li>
+            <li>
+                <h4>電子郵件</h4><p class="confirming-receiver-p"><%= receiverdata.email%></p>
+            </li>
+            <li>
+                <h4>收件地址</h4><p class="confirming-receiver-p"><%= receiverdata.address%></p>
+            </li>
+            <li>
+                <h4>郵遞區號</h4><p class="confirming-receiver-p"><%= receiverdata.postal%></p>
+            </li>
+        </ul>
+    
+    </section>
+    <div class="confirming-reciever-div">
+        <a href="/orders/confirm" class="confirming-reciever-a">重新填寫</a> <a href="/orders/pay" class="confirming-reciever-a">開始付款流程</a>
+    </div>
+
+
+        
+
+    </main>
+    <%- include('../includes/footer')%>
+</body>
+</html>

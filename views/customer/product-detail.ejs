@@ -1,0 +1,146 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-周邊商品'})%>
+<link rel="stylesheet" href="/styles/product.customer.css">
+
+<script src="/scripts/product-tab.js" defer></script>
+<script src="/scripts/cart-management.js" defer></script>
+</head>
+<body>
+    <%- include('../includes/header')%>
+    <main>
+        <div class="main-area">
+            <ul class="nav-area">
+                <li class="nav-li" id="first-nav-li"><a href="/productlist">所有商品</a><p id="expand-btn">展開分類&#8744;</p></li>
+                <% for (const category of categories) { %>
+                    <li class="nav-li rest-nav-li">
+                        <a href="/productlist/<%= category.custom_number %>"> 
+                        <%= category.category_name %>
+                        </a>
+                    </li>
+                <% } %>
+                <li class="nav-li rest-nav-li rest-last-nav-li"><form action="/search" method="get"><button class="search-Btn">搜尋</button><input  type="text" name="productname"></form></li>
+            </ul>
+           
+            <article class="product-detail">
+                <img src="/product-data/product-images/<%= products[0].image %>" alt=""></li>
+                <ul class="product-data">
+                <li><h3> <%= products[0].name %></h3></li>
+                <li><p>NT$ <%= products[0].price %></p></li>
+                <li class="li-contain-section">
+                    <section class="select-options">
+                        <h4>尺吋/規格</h4>
+                        <ul>
+                            <% if(products[0].size_1 !== 'null') { %>
+                            <li>
+                                <input type="radio" name="size" id="size_1" value="<%= products[0].size_1 %>" checked>
+                                <label for="size_1" id="size_1_option"><%= products[0].size_1 %></label>
+                            </li>
+                            <%}%>
+                            <% if(products[0].size_2 !== 'null') { %>
+                            <li>
+                                <input type="radio" name="size" id="size_2" value="<%= products[0].size_2 %>">
+                                <label for="size_2"><%= products[0].size_2 %></label>
+                            </li>
+                            <%}%>
+                            <% if(products[0].size_3 !== 'null') { %>
+                            <li>
+                                <input type="radio" name="size" id="size_3" value="<%= products[0].size_3 %>">
+                                <label for="size_3"><%= products[0].size_3 %></label>
+                            </li>
+                            <%}%>
+                            <% if(products[0].size_4 !== 'null') { %>
+                            <li>
+                                <input type="radio" name="size" id="size_4" value="<%= products[0].size_4 %>">
+                                <label for="size_4"><%= products[0].size_4 %></label>
+                            </li>
+                            <%}%>
+                            <% if(products[0].size_5 !== 'null') { %>
+                            <li>
+                                <input type="radio" name="size" id="size_5" value="<%= products[0].size_5 %>">
+                                <label for="size_5"><%= products[0].size_5 %></label>
+                            </li>
+                            <%}%>
+                        </ul>
+                    </section>
+                </li>
+                <li class="li-contain-section">
+                    <section class="select-options">
+                        <h4>顏色</h4>
+                        <ul>
+                            <% if(products[0].color_1 !== 'null') { %>
+                            <li>
+                                <input type="radio" name="color" id="color_1" value="<%= products[0].color_1 %>" checked>
+                                <label for="color_1" id="color_1_option"><%= products[0].color_1 %></label>
+                            </li>
+                            <%}%>
+                            <% if(products[0].color_2 !== 'null') { %>
+                            <li>
+                                <input type="radio" name="color" id="color_2" value="<%= products[0].color_2 %>">
+                                <label for="color_2"><%= products[0].color_2 %></label>
+                            </li>
+                            <%}%>
+                            <% if(products[0].color_3 !== 'null') { %>
+                            <li>
+                                <input type="radio" name="color" id="color_3" value="<%= products[0].color_3 %>">
+                                <label for="color_3"><%= products[0].color_3 %></label>
+                            </li>
+                            <%}%>
+                            <% if(products[0].color_4 !== 'null') { %>
+                            <li>
+                                <input type="radio" name="color" id="color_4" value="<%= products[0].color_4 %>">
+                                <label for="color_4"><%= products[0].color_4 %></label>
+                            </li>
+                            <%}%>
+                            <% if(products[0].color_5 !== 'null') { %>
+                            <li>
+                                <input type="radio" name="color" id="color_5" value="<%= products[0].color_5 %>">
+                                <label for="color_5"><%= products[0].color_5 %></label>
+                            </li>
+                            <%}%>
+                        </ul>
+                    </section>
+                </li>
+                <li>
+                    <section class="select-number">
+                        <label><h4>購買數量</h4></label>
+                        <select name="" id="select">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+
+                        </select>
+
+                    </section>
+                    
+                </li>
+                <li>
+                    <section>
+                        <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>
+                        <button id="buyBtn" class="buy-btn" data-productuid="<%= products[0].uid %>">加入購物車</button>
+                    </section>
+                </li>
+                </ul>
+                <aside>
+                    <ul class="aside-title">
+                        <li class="tab-title" onclick="switchTab(event, 'tab1')"><p>商品描述</p></li>
+                        <li class="tab-title" onclick="switchTab(event, 'tab2')"><p>運送注意事項</p></li>
+                    </ul>
+                    <div class="aside-content">
+                        <section class="tab-content" id="tab1"><p><%= products[0].description %></p></section>
+                        <section class="tab-content" id="tab2">shipping and payments</section>
+                    </div>
+                </aside>
+            </article>
+           
+            </div>
+          
+    </main>
+    <%- include('../includes/footer')%>
+</body>
+</html>

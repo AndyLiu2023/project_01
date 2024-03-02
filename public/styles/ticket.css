@@ -1,0 +1,177 @@
+body{
+    background-color: var(--color-002);
+}
+
+main{
+    padding: 1rem;
+}
+
+ h1{
+    text-align: center;
+    color: var(--color-004);
+    }
+
+h2{
+    color: var(--color-003);
+}
+
+main > section{
+   margin: 0;
+}
+
+.ticket-info-ul{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ticket-info-ul li{
+    background-color: var(--color-004);
+    color: var(--color-001);
+    margin: 0.5rem 0;
+    padding: 1rem 0.5rem;
+    display: grid;
+    grid-template-rows: 8rem 12rem 2.5rem 5rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: var(--boxshadow);
+
+  
+}
+
+.ticket-info-ul li h2{
+    margin: auto;
+    font-size: 2.5rem;
+}
+
+.ticket-info-ul li div p{
+    font-size: 1rem;
+}
+
+.price{
+    margin: auto;
+    font-size: 1.5rem;
+    color: var(--color-003);
+}
+
+.ticket-note-section{
+    background-color: var(--color-003);
+    border: 1px solid var(--color-001) ;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.ticket-note-section h2{
+    color: var(--color-001);
+}
+
+.ticket-note-section ul{
+    list-style: disc;
+    margin-left: 2rem;
+}
+
+
+.purchase-btn{
+    /* width: 50%; */
+    margin: auto;
+    padding: 1rem;
+    /* height: 50%; */
+    background-color: var(--color-003);
+    border-radius: 5px;
+    font-size: 1.25rem;
+    box-shadow: var(--boxshadow);
+    color: var(--color-001);
+}
+
+.purchase-btn:hover{
+    background-color: var(--color-001);
+    color: var(--color-004);
+    cursor: pointer;
+}
+
+@media  (min-width: 60rem){
+    h1{
+        padding-left: 4rem;
+        text-align: left;
+        color: var(--color-004);
+        margin-bottom: 1.5rem;
+        }
+    
+    h2{
+        color: var(--color-003);
+    }
+    
+    main > section{
+       margin: 0.5rem 10rem;
+    }
+    
+    .ticket-info-ul{
+        display: flex;
+        flex-direction: row;
+    
+    }
+    
+    .ticket-info-ul li{
+        background-color: var(--color-004);
+        color: var(--color-001);
+        margin: 0 0.5rem;
+        padding: 1rem 0.5rem;
+        display: grid;
+        /* grid-template-rows: repeat(4, 10rem); */
+        grid-template-rows: 5rem 15rem 5rem 5rem; 
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: var(--boxshadow);
+    
+      
+    }
+    
+    .ticket-info-ul li h2{
+        margin: auto;
+        font-size: 1.5rem;
+    }
+    
+
+
+    .price{
+        margin: auto;
+        font-size: 1.5rem;
+        color: var(--color-003);
+    }
+    
+    .ticket-note-section{
+        background-color: var(--color-003);
+        border: 1px solid var(--color-001) ;
+        border-radius: 5px;
+        padding: 1rem;
+    }
+    
+    .ticket-note-section h2{
+        color: var(--color-001);
+    }
+    
+    .ticket-note-section ul{
+        list-style: disc;
+        margin-left: 2rem;
+    }
+    
+    
+    .purchase-btn{
+        /* width: 50%; */
+        margin: auto;
+        /* height: 50%; */
+        background-color: var(--color-003);
+        border-radius: 5px;
+        font-size: 1.25rem;
+        box-shadow: var(--boxshadow);
+    }
+    
+    .purchase-btn:hover{
+        background-color: var(--color-001);
+        color: var(--color-004);
+        cursor: pointer;
+    }
+    
+}

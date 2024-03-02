@@ -1,0 +1,33 @@
+<section>
+    <ul class="cart-item-ul">
+        <li>
+            <img src="/product-data/product-images/<%= item.product.image %>" alt="">
+        </li>
+        <li>
+            <h4><%= item.product.name %></h4>
+            <p>尺吋/規格：<span><%= item.size %></span></p>
+            <p>顏色：<span><%= item.color %></span></p>
+        </li>
+        <li>
+            <p>商品單價：<span>NT$ <%= item.product.price %></span></p>
+            
+            <p>購買數量：</p>
+            <div class="quantity-adjust-btn">
+                <button onclick="this.parentNode.querySelector('.quantitychanger').stepDown()" >-</button>
+                <input class="quantitychanger" type="number" value="<%= item.quantity %>"  min="1" max="10" required>
+                <button onclick="this.parentNode.querySelector('.quantitychanger').stepUp()">+</button>
+            </div>
+            <form class="quantity-adjust-form" data-productuid="<%= item.product.uid %>">
+            <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>    
+            <button class="change-quantity-btn">更新數量</button>
+            </form>
+        </li>
+        <li id="btn-area">
+            <form class="product-delete-form" data-productuid="<%= item.product.uid %>">
+            <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>    
+            <button>移除</button>
+            </form>
+        </li>
+    </ul>
+
+</section>

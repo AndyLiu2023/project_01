@@ -1,0 +1,95 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-周邊商品'})%>
+<link rel="stylesheet" href="/styles/product.customer.css">
+<script src="/scripts/product-list.js" defer></script>
+
+</head>
+<body>
+    <%- include('../includes/header')%>
+    <main>
+
+
+            <div class="main-area">
+                <div class="quick-add-to-cart-window">
+                    
+                </div>
+                <section class="quick-section">
+                    <ul>
+                        <li id = "quick-first-li">
+                            <img id="quick-img" src="" alt="">
+                        </li>
+                        <li>
+                            <p id="quick-name">商品名稱</p>
+                        </li>
+                        <li>
+                            <p id="quick-price">價格</p>
+                        </li>
+                        <li>
+                            <label id="quick-size">尺寸/規格</label>
+                            <select id="sizes-options"> </select>
+                        </li>
+                        <li>
+                            <label id="quick-color">顏色</label>
+                            <select id="colors-options"></select>
+                        </li>
+
+                        <li>
+                            <label><h4>購買數量</h4></label>
+                            <select name="" id="select">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+    
+                            </select>
+                        </li>
+                        <li>
+                            <form action="">
+                                <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>
+                                <button id="quick-add-btn" >加入購物車</button>
+                            </form>
+                        </li>
+                        <li>
+                            <button id="quick-close">關閉</button>
+                        </li>
+                    </ul>
+
+                </section>
+            <ul class="nav-area">
+                <li class="nav-li" id="first-nav-li"><a href="/productlist">所有商品</a><p id="expand-btn">展開分類&#8744;</p></li>
+                <% for (const category of categories) { %>
+                    <li class="nav-li rest-nav-li">
+                        <a href="/productlist/<%= category.custom_number %>"> 
+                        <%= category.category_name %>
+                        </a>
+                    </li>
+                <% } %>
+                <li class="nav-li rest-nav-li"><form action="/search" method="get"><button class="search-Btn">搜尋</button><input  type="text" name="productname"></form></li>
+            </ul>
+
+            <ul class="product-list">
+                
+                <% if(products.length === 0) { %>
+                    <p class="message">您要找的商品還未上架！</p>
+                    <% } %>
+
+                <% for (const product of products) { %>
+                    
+                <li class="product-list-li">
+                    <%- include('includes/product-item', {product: product}) %>
+                </li>
+               
+                <% } %>
+            </ul>
+            </div>
+
+          
+    </main>
+    <%- include('../includes/footer')%>
+</body>
+</html>

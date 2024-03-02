@@ -1,0 +1,18 @@
+<section>
+    <ul class="order-cart-item-ul">
+        <li class="order-product-name">
+            <p><%= item.product.name %></p>
+        </li>
+        <li>
+            <p class="order-cart-item-p">尺吋/規格：<span class="order-text"><%= item.size %></span></p>
+            <p class="order-cart-item-p">顏色：<span class="order-text"><%= item.color %></span></p>
+        </li>
+        <li>
+            <p class="order-cart-item-p">商品單價：<span class="order-text">NT$ <%= item.product.price %></span></p>
+        </li>
+        <li>
+            <p class="order-cart-item-p">購買數量： <span class="order-text"><%= item.quantity %></span>件</p>
+        </li>
+    </ul>
+
+</section>

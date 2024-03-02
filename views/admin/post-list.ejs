@@ -1,0 +1,55 @@
+<%- include('../includes/head', {pageTitle: '火狼祭-消息列表'})%>
+<link rel="stylesheet" href="/styles/posts.css">
+<script src="/scripts/posts.js" defer></script>
+</head>
+<body>
+   
+    <%- include('../includes/header')%>
+    <main>
+        <% if (!locals.isAdmin) { %> 
+            <%- include('../includes/no_auth_item') %>
+            
+            <% } %>
+
+        <% if (locals.isAdmin) { %>
+           
+            <h2>管理員後台-消息管理</h2>
+                <h1>消息列表</h1>
+            <div id="create-Btn-div">
+            <button class="post-Btn a-list" id="create-Btn">新建消息</button>
+            </div>
+            <aside class="newPost-Area" id="newPost-Area" >
+                <form action="/admin/newposts" method="POST">
+                    <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>
+                    
+                    <h4>新建消息</h4>
+                    <p>
+                        <label for="title">消息標題</label>
+                        <input type="text" name="title" id="title">
+                    </p>
+                    <p>
+                        <label for="content">消息內容</label>
+                        <textarea type="text" name="content" id="content" rows="8"></textarea>
+                    </p>
+                    <button class="a-list a-create">完成新建</button>
+                    <a class="a-list a-create" id="closeNewPost-Btn">關閉</a>
+                </form>
+                
+            </aside>
+            <ul class="posts-list">
+                
+                <% for (const post of posts) { %>
+                    
+                <li>
+                    <%- include('includes/post-item', {posts: post}) %>
+                </li>
+               
+                <% } %>
+            </ul>
+
+            <% } %>
+          
+    </main>
+    <%- include('../includes/footer')%>
+</body>
+</html>

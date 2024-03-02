@@ -1,0 +1,52 @@
+<%- include('./includes/head', {pageTitle: '火狼祭-會員註冊'})%>
+<link rel="stylesheet" href="/styles/form.css">
+</head>
+<body>
+   
+    <%- include('./includes/header')%>
+    <main>
+        <form action="/signup" method="POST">
+            <input
+            type="hidden"
+            name="CSRFToken"
+            value="<%= locals.csrfToken %>"/>
+            <h2>會員註冊</h2>
+
+            <% if (inputData.errorMessage) { %>
+                <section class="alerts">
+                  <h2>輸入錯誤</h2>
+                  <p><%= inputData.errorMessage %></p>
+                </section>
+              <% } %>
+
+            <p>
+                <label for="username">姓名</label>
+                <input type="text" name="username" id="username" value="<%= inputData.username %>" required>
+            </p>
+            <p>
+                <label for="email">電子信箱</label>
+                <input type="text" name="email" id="email" value="<%= inputData.email %>" required>
+            </p>
+            <p>
+                <label for="password">密碼</label>
+                <input type="password" name="password" id="password" value="<%= inputData.password %>"  minlenght="6"  required>
+            </p>
+            <!-- <p>
+                <label for="city">縣市</label>
+                <input type="text" name="city" id="city" value="<%= inputData.city %>" required>
+            </p>
+            <p>
+                <label for="street">路/街</label>
+                <input type="text" name="street" id="street" value="<%= inputData.street %>" required>
+            </p>
+            <p>
+                <label for="postal"  minlength="3" maxlength="5" >郵遞區號</label>
+                <input type="text" name="postal" id="postal" value="<%= inputData.postal %>" minlength="3" maxlength="3" required>
+            </p> -->
+            <button class="submit-Btn">送出</button>
+            <a href="/login" class="nomember">已註冊會員？點此登入</a>
+        </form>
+    </main>
+    <%- include('./includes/footer')%>
+</body>
+</html>

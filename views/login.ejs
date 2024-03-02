@@ -1,0 +1,38 @@
+<%- include('./includes/head', {pageTitle: '火狼祭-會員登入'})%>
+<link rel="stylesheet" href="/styles/form.css">
+</head>
+<body>
+   
+    <%- include('./includes/header')%>
+    <main>
+        <form action="/login" method="POST">
+            <input
+            type="hidden"
+            name="CSRFToken"
+            value="<%= locals.csrfToken %>"/>
+            <h2>會員登入</h2>
+
+            <% if (inputData.errorMessage) { %>
+                <section class="alerts">
+                  <h2>輸入錯誤</h2>
+                  <p><%= inputData.errorMessage %></p>
+                </section>
+              <% } %>
+
+            <p>
+                <label for="email">電子信箱</label>
+                <input type="text" name="email" id="email" value="<%= inputData.email %>" required>
+            </p>
+            <p>
+                <label for="password">密碼</label>
+                <input type="password" name="password" id="password" value="<%= inputData.password %>" required>
+            </p>
+ 
+            <button class="submit-Btn">送出</button>
+            <a href="/signup" class="nomember">沒有會員？點此註冊</a>
+        </form>
+        
+    </main>
+    <%- include('./includes/footer')%>
+</body>
+</html>

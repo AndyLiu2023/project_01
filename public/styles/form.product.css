@@ -1,0 +1,132 @@
+body{
+    background-color: var(--color-002);
+    color: var(--color-004);
+    
+}
+
+form p{
+    padding: 0.5rem 0;
+}
+
+.form-area-withoutbtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+
+}
+
+
+
+.create-Product-form{
+
+    border: 1px solid var(--color-004);
+    border-radius: 5px;
+    box-shadow: var(--boxshadow);
+    width: 90%;
+    margin: 1.5rem auto;
+    padding: 1rem;
+}
+
+
+
+
+form input, textarea, select{
+    display: block;
+    margin: 0.25rem 0; 
+}
+
+
+#add-Size-option-a{
+    margin-left: 2rem;
+    padding: 0 0.15rem;
+    border-radius: 5px;
+    background-color: var(--color-003);
+    box-shadow: var(--boxshadow);
+    color: var(--color-001);
+    cursor: pointer;
+}
+
+
+
+a[id^="deleteSizesOption"]{
+    color: red;
+    margin-left: 4rem;
+}
+
+
+#add-Color-option-a{
+    margin-left: 4rem;
+    padding: 0 0.15rem;
+    border-radius: 5px;
+    background-color: var(--color-003);
+    box-shadow: var(--boxshadow);
+    color: var(--color-001);
+    cursor: pointer;
+}
+
+
+
+a[id^="deleteColorsOption"]{
+    color: red;
+    margin-left: 6rem;
+}
+
+.btn-section {
+  text-align: right;
+}
+
+.btn-section button{
+    margin: 0 0.5rem;
+    padding: 0.2rem;
+    border-radius: 5px;
+    border:none;
+    background-color: var(--color-003);
+    box-shadow: var(--boxshadow);
+    color: var(--color-001);
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.btn-section a{
+    padding: 0.2rem;
+    border-radius: 5px;
+    background-color: var(--color-003);
+    box-shadow: var(--boxshadow);
+    color: var(--color-001);
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+#add-Size-option-a:hover, #add-Color-option-a:hover, .btn-section button:hover, a:hover{
+    background-color: var(--color-001);
+    color: var(--color-004);
+}
+
+.imageUpload-area img{
+    display: none;
+    max-width: 20rem;
+    max-height: 30rem;
+    object-fit: cover;
+
+}
+
+textarea{
+    white-space: pre-wrap;
+}
+
+
+.alerts{
+    width: 40%;
+    margin: 1rem auto 0 auto;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid var(--color-004);
+    background-color:var(--color-003);
+    border-radius: 5px;
+    box-shadow: var(--boxshadow);
+    color:var(--color-001);
+
+}

@@ -1,0 +1,92 @@
+<header>
+    <div id="logoimg"><a href="/"><img src="/product-data/demoPic/logo.png" alt="" id="logo"></a></div>
+        <nav id="desktop-Menu">
+            
+            <ul class="navibar">
+                
+                <li class="dropDown"><a>活動資訊</a>
+                    <ul class="dropDownItems">
+                        <li><a href="/latestnews">最新資訊</a></li>
+                        <li><a href="/about">什麼是火狼祭？</a></li>
+                        <li><a href="/trafficguide">如何前往</a></li>
+                        <li><a href="/timetable">活動時刻表</a></li>
+                    </ul>
+                </li>
+                <li><a href="/ticket">購票資訊</a></li>
+                <li class="dropDown"><a >周邊商品<span class="badge01"><%= locals.cart.totalQuantity %></span></a>
+                    <ul class="dropDownItems">
+                        <li><a href="/productlist">商品</a></li>
+                        <li><a href="/cart">購物車<span class="badge01"><%= locals.cart.totalQuantity %></span></a></li>
+                        <li><a href="/orders">我的訂單</a></li>
+                    </ul>
+                </li>
+                <li><a href="/QA">常見問題</a></li>
+
+                <% if (locals.isAdmin) { %>
+                <li class="dropDown"><a href="">管理員</a>
+                    <ul class="dropDownItems">
+                        <li><a href="/admin/plist">商品管理</a></li>
+                        <li><a href="/admin/adminorder">訂單管理</a></li>
+                        <li><a href="/admin/posts">消息管理</a></li>
+                    </ul>
+                </li>
+                <% } %>
+
+                <% if (!locals.isAuth) { %>
+
+                <li><a href="/login">登入</a></li>
+                <% } %>
+
+                <% if (locals.isAuth) { %>
+                <li>
+                    <form action="/logout" method="POST">
+                        <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>
+                        <button class="logout-Btn" id="logout-Btn-desktop">登出</button>
+                    </form>
+                </li>
+                <% } %>
+            </ul>
+        </nav>
+        <button id="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <aside id="mobile-menu" class="">
+            <nav>
+                <ul class="navibar">
+                    <li id="toggleOffDropdownBtn">&times;</li>
+                    <li class="dropDown"><a id="dropDown-info">活動資訊</a>
+                        <ul class="dropDownItems" id="dropDownItems-Info">
+                            <li><a href="/latestnews">最新資訊</a></li>
+                            <li><a href="/about">什麼是火狼祭？</a></li>
+                            <li><a href="/trafficguide">如何前往</a></li>
+                            <li><a href="/timetable">活動時刻表</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="/ticket">購票資訊</a></li>
+                    <li class="dropDown"><a id="dropDown-good">周邊商品<span class="badge01"><%= locals.cart.totalQuantity %></span></a>
+                        <ul class="dropDownItems" id="dropDownItems-good">
+                            <li><a href="/productlist">商品</a></li>
+                            <li><a href="/cart">購物車<span class="badge01"><%= locals.cart.totalQuantity %></span></a></li>
+                            <li><a href="/orders">我的訂單</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/QA">常見問題</a></li>
+                    <% if (!locals.isAuth) { %>
+                    <li><a href="/login">登入</a></li>
+                    <% } %>
+                    <% if (locals.isAuth) { %>
+                    <li>
+                        <form action="/logout" method="POST">
+                            <input type="hidden" name="CSRFToken" value="<%= locals.csrfToken %>"/>
+                            <button class="logout-Btn" id="logout-Btn">登出</button>
+                        </form>
+                    </li>
+                    <% } %>
+                </ul>
+            </nav>
+          </aside>
+
+</header>
